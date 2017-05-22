@@ -15,3 +15,10 @@
   height: 350px;
   padding: 25px;
 }
+
+.cbutton {
+  font-size: 2em;
+  width: 55px;
+  margin: 4px;
+  padding: 4px;
+}
