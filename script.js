@@ -17,9 +17,10 @@ for (let i = 0; i < buttons.length; i++) {
     } else if (val == "C") {
       calc = 0;
       completed = true;
+    } else {
+      calc += val;
     }
 
-    calc += val;
     output.innerHTML = calc;
   });
 }
