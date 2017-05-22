@@ -14,6 +14,9 @@ for (let i = 0; i < buttons.length; i++) {
     if (val == "=") {
       calc = eval(calc);
       completed = true;
+    } else if (val == "C") {
+      calc = 0;
+      completed = true;
     }
 
     calc += val;
