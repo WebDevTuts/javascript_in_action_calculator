@@ -1,0 +1,9 @@
+#output {
+  height: 45px;
+  background-color: #000;
+  color: aqua;
+  width: 100%;
+  font-size: 2em;
+  padding: 5px;
+  text-align: right;
+}
