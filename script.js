@@ -11,6 +11,11 @@ for (let i = 0; i < buttons.length; i++) {
       calc = "";
     }
 
+    if (val == "=") {
+      calc = eval(calc);
+      completed = true;
+    }
+
     calc += val;
     output.innerHTML = calc;
   });
