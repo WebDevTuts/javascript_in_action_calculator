@@ -2,6 +2,7 @@ const buttons = document.getElementsByClassName('cbutton');
 const output = document.getElementById('output');
 let calc = "";
 let completed = false;
+let operator = false;
 
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', function() {
@@ -19,6 +20,14 @@ for (let i = 0; i < buttons.length; i++) {
       completed = true;
     } else {
       calc += val;
+    }
+
+    if (val == "+" || val == "-" || val == "*" || val == "/") {
+      if (operator) {
+        operator = false;
+        calc = eval(calc);
+      }
+      operator = true;
     }
 
     output.innerHTML = calc;
