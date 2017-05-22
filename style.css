@@ -6,4 +6,12 @@
   font-size: 2em;
   padding: 5px;
   text-align: right;
+  margin-bottom: 25px;
+}
+
+#myCalc {
+  width: 350px;
+  background-color: dimgray;
+  height: 350px;
+  padding: 25px;
 }
