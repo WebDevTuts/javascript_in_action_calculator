@@ -13,16 +13,6 @@ for (let i = 0; i < buttons.length; i++) {
       calc = "";
     }
 
-    if (val == "=") {
-      calc = eval(calc);
-      completed = true;
-    } else if (val == "C") {
-      calc = 0;
-      completed = true;
-    } else {
-      calc += val;
-    }
-
     if (val == "+" || val == "-" || val == "*" || val == "/") {
       if (operator) {
         operator = false;
@@ -33,6 +23,16 @@ for (let i = 0; i < buttons.length; i++) {
         }
       }
       operator = true;
+    }
+
+    if (val == "=") {
+      calc = eval(calc);
+      completed = true;
+    } else if (val == "C") {
+      calc = 0;
+      completed = true;
+    } else {
+      calc += val;
     }
 
     output.innerHTML = calc;
