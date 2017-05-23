@@ -2,4 +2,6 @@
 
 In this tutorial, we learn how to build a simple calculator with JavaScript.
 
+[View demo site here.](https://webdevtuts.github.io/javascript_in_action_calculator/)
+
 ![Preview](screenshot.jpg)
