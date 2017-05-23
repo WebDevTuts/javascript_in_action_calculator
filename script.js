@@ -3,6 +3,7 @@ const output = document.getElementById('output');
 let calc = "";
 let completed = false;
 let operator = false;
+let operators = ["+", "-", "*", "/"];
 
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', function() {
