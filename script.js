@@ -8,12 +8,13 @@ let operators = ["+", "-", "*", "/"];
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', function() {
     let val = this.innerHTML;
-    if (completed || calc=="0") {
+    if (completed) {
       completed = false;
       calc = "";
     }
 
     if (val == "+" || val == "-" || val == "*" || val == "/") {
+      operator = true;
       if (operator) {
         operator = false;
         if (operators.indexOf(output.innerHTML.slice(-1)) > -1) {
@@ -22,12 +23,14 @@ for (let i = 0; i < buttons.length; i++) {
           calc = eval(calc);
         }
       }
-      operator = true;
     }
 
     if (val == "=") {
-      calc = eval(calc);
-      completed = true;
+      val = "";
+      if (operators.indexOf(output.innerHTML.slice(-1)) == -1) {
+        calc = eval(calc);
+        completed = true;
+      }
     } else if (val == "C") {
       calc = 0;
       completed = true;
@@ -35,6 +38,11 @@ for (let i = 0; i < buttons.length; i++) {
       calc += val;
     }
 
-    output.innerHTML = calc;
+    if (calc != "undefined") {
+      output.innerHTML = calc;
+    } else if (calc == undefined) {
+      calc = "";
+      output.innerHTML = "";
+    }
   });
 }
