@@ -26,7 +26,11 @@ for (let i = 0; i < buttons.length; i++) {
     if (val == "+" || val == "-" || val == "*" || val == "/") {
       if (operator) {
         operator = false;
-        calc = eval(calc);
+        if (operators.indexOf(output.innerHTML.slice(-1)) > -1) {
+          calc = calc.substring(0, calc.length - 1);
+        } else {
+          calc = eval(calc);
+        }
       }
       operator = true;
     }
